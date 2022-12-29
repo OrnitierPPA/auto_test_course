@@ -1,1 +1,1 @@
-# auto_test_course
+# Stepik-course
