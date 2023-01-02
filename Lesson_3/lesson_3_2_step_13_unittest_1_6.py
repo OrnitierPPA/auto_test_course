@@ -5,14 +5,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from webdriver_manager.chrome import ChromeDriverManager
-
 class TestRegistration(unittest.TestCase):
     global expected_welcome_text 
     expected_welcome_text  = "Congratulations! You have successfully registered!"
 
     def form(self, link):
-        browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+        browser = webdriver.Chrome()
         browser.get(link)
 
         button = WebDriverWait(browser, 12).until(

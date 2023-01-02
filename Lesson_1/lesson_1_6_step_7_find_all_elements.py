@@ -4,11 +4,9 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from webdriver_manager.chrome import ChromeDriverManager
-
 value=["Да", "Конечно", "Нет", "Отнюдь", "Естественно", "Ясен-красен", "Вовсе нет!"]
 try:
-    browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    browser = webdriver.Chrome()
     browser.get("http://suninjuly.github.io/huge_form.html")
     elements = browser.find_elements(By.TAG_NAME, "input")
     for element in elements:

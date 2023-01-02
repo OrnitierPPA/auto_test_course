@@ -4,8 +4,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from webdriver_manager.chrome import ChromeDriverManager
-
 with open("selenium.txt", "w") as file:
   pass
 mydir = os.path.abspath(os.path.dirname(__file__))
@@ -13,7 +11,7 @@ file_path = os.path.join(mydir, "selenium.txt")
 
 try: 
   link = "http://suninjuly.github.io/file_input.html"
-  browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+  browser = webdriver.Chrome()
   browser.get(link)
 
   name = browser.find_element(By.CSS_SELECTOR, "[name='firstname']").send_keys('Ivan')

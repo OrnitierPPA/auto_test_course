@@ -4,12 +4,10 @@ import math
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from webdriver_manager.chrome import ChromeDriverManager
-
 link = "http://suninjuly.github.io/find_link_text"
 
 try:
-    browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    browser = webdriver.Chrome()
     browser.get(link)
 
     link = browser.find_element(By.LINK_TEXT, str(math.ceil(math.pow(math.pi, math.e)*10000)))

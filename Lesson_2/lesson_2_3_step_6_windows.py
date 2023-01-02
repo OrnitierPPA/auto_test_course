@@ -1,17 +1,14 @@
 import math
-import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-from webdriver_manager.chrome import ChromeDriverManager
 
 def calc(x):
     return str(math.log(abs(12*math.sin(int(x)))))
 
 try: 
     link = "http://suninjuly.github.io/redirect_accept.html"
-    browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    browser = webdriver.Chrome()
     browser.get(link)
 
     start = browser.find_element(By.CSS_SELECTOR, "button.btn").click()

@@ -3,13 +3,11 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from webdriver_manager.chrome import ChromeDriverManager
-
 def calc(num1, num2):
     return str(num1 + num2)
 try:
     link = 'https://suninjuly.github.io/selects1.html'
-    browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    browser = webdriver.Chrome()
     browser.get(link)
 
     num1 = int(browser.find_element(By.XPATH, "//form//span[2]").text)

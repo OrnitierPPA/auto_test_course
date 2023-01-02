@@ -4,14 +4,12 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from webdriver_manager.chrome import ChromeDriverManager
-
 def calc(x):
   return str(math.log(abs(12*math.sin(int(x)))))
 
 try:
   link = "http://suninjuly.github.io/execute_script.html"
-  browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+  browser = webdriver.Chrome()
   browser.get(link)
 
   x_element = browser.find_element(By.ID, "input_value")

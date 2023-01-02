@@ -3,12 +3,10 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from webdriver_manager.chrome import ChromeDriverManager
-
 link = "http://suninjuly.github.io/simple_form_find_task.html"
 
 try:
-    browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    browser = webdriver.Chrome()
     browser.get(link)
 
     input1 = browser.find_element(By.TAG_NAME, "input")
