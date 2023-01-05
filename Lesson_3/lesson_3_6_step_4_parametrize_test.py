@@ -30,8 +30,8 @@ def test_login(browser, link):
         EC.presence_of_element_located((By.ID, 'ember33'))
     )
     login_button = browser.find_element(By.ID, 'ember33').click()
-    input_email = browser.find_element(By.ID, 'id_login_email').send_keys('associatedtolife@mail.ru')
-    input_password = browser.find_element(By.ID, 'id_login_password').send_keys('Arkaduy2131')
+    input_email = browser.find_element(By.ID, 'id_login_email').send_keys('email')
+    input_password = browser.find_element(By.ID, 'id_login_password').send_keys('password')
     submit = browser.find_element(By.CLASS_NAME, 'sign-form__btn.button_with-loader ').click()
 
     wait_loading = WebDriverWait(browser, 15).until(
