@@ -7,7 +7,9 @@ def test_shop_cart_button(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     browser.get(link)
 
-    add_cart = browser.find_element(By.XPATH, "//button[@class='btn btn-lg btn-primary btn-add-to-basket']").click()
+    add_cart = browser.find_element(By.XPATH, "//button[@class='btn btn-lg btn-primary btn-add-to-basket']")
+    assert add_cart, "No basket button"
+    add_cart.click()
     alert_wait = WebDriverWait(browser, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "div.alertinner p > a.btn"))
     ).click()
