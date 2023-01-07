@@ -16,9 +16,4 @@ def test_shop_cart_button(browser):
         EC.presence_of_element_located((By.CSS_SELECTOR, "div.alertinner p > a.btn"))
     ).click()
     
-    try:
-        browser.find_element(By.CSS_SELECTOR, "div.row div.col-sm-4 h3 > a")
-        assert True
-    except NoSuchElementException:
-        assert False
-
+    assert browser.find_element(By.CSS_SELECTOR, "div.row div.col-sm-4 h3 > a"), "busket is empty"
