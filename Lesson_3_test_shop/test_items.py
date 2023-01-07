@@ -8,9 +8,11 @@ def test_shop_cart_button(browser):
     browser.get(link)
 
     assert browser.find_element(By.XPATH, "//button[@class='btn btn-lg btn-primary btn-add-to-basket']"), "No basket button"
-    add_cart = browser.find_element(By.XPATH, "//button[@class='btn btn-lg btn-primary btn-add-to-basket']").click()
 
-    alert_wait = WebDriverWait(browser, 10).until(
+    # Дальше дополнительная проверка, что товар добавился в корзину
+    browser.find_element(By.XPATH, "//button[@class='btn btn-lg btn-primary btn-add-to-basket']").click()
+
+    WebDriverWait(browser, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "div.alertinner p > a.btn"))
     ).click()
     
